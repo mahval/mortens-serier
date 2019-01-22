@@ -1,0 +1,23 @@
+.comic-container, .comic-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.comic-nav {
+    max-width: 650px;
+    margin: 10px auto;
+}
+
+.comic-container {
+    img {
+        width: 100%;
+    }
+}
+
+.comic-container>mat-card {
+    flex-basis: 650px;
+}
+
+.spacer {
+    flex-grow: 1;
+}
