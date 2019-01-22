@@ -1,4 +1,4 @@
-.topcontainer {
+.top-container {
     font-family: 'Jura', sans-serif;
     text-transform: uppercase;
     padding: 20px;
@@ -7,9 +7,18 @@
     background-repeat: no-repeat;
     background-position: right bottom;
     height: 80px;
+
+    .banner-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        button {
+            margin-right: 15px;
+        }
+    }
 }
 
-.middlecontainer {
+.middle-container {
 }
 
 .bottom {

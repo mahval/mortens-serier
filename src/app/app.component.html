@@ -1,9 +1,15 @@
 <body>
-  <div class="topcontainer">
+  <div class="top-container">
     <h1>Mortens serier</h1>
-    <!-- <img src="../assets/supertordengrim_transparent.png"> -->
+    <br>
+    <div class="banner-options">
+      <ng-container *ngFor="let type of types_of_content">
+      <button mat-raised-button *ngIf="contentIsSelected(type)" (click)="selectContent(type)">{{ type.name }}</button>
+      <button mat-button *ngIf="!contentIsSelected(type)" (click)="selectContent(type)">{{ type.name }}</button>
+      </ng-container>
+    </div>
   </div>
-  <div class="supercontentcontainer">
+  <div class="super-contentcontainer">
     <router-outlet></router-outlet>
   </div>
 </body>
