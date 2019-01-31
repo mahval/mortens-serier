@@ -1,6 +1,6 @@
 <section class="comic-nav">
   <!-- <div> -->
-  <button mat-icon-button>
+  <button mat-icon-button (click)="previousStripe()" [disabled]="selectedId < 2" matTooltip="Forrige">
     <mat-icon>arrow_back</mat-icon>
   </button>
   <span class="spacer"></span>
@@ -9,7 +9,7 @@
     <mat-icon *ngIf="zoomedIn">zoom_out</mat-icon>
   </button>
   <span class="spacer"></span>
-  <button mat-icon-button>
+  <button mat-icon-button (click)="nextStripe()" matTooltip="Neste">
     <mat-icon>arrow_forward</mat-icon>
   </button>
   <!-- </div> -->
@@ -17,12 +17,13 @@
 <section class="comic-container">
   <mat-card style="flex-basis: none" [ngStyle]="{'flex-basis': zoomedIn ? 'initial' : '850px'}">
     <mat-card-header>
-      <mat-card-title>#{{selectedId}} &mdash; Cover name</mat-card-title>
+      <mat-card-title>#{{selectedCover.id}} &mdash; {{ selectedCover.name }}</mat-card-title>
       <mat-card-subtitle>{{ now | date:'longDate' }}</mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="../../assets/testcomic.gif" alt="My comic"> -->
     <mat-card-content>
-      <img src="../../assets/covers/cover_01.jpg" alt="My cover">
+      <!-- <img src="'../../assets/covers/cover_0' + selectedId + '.jpg'" alt="My cover"> -->
+      <img [src]=selectedCover.url alt="My cover">
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to

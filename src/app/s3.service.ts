@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { COVERS } from './variables';
 
 @Injectable({
   providedIn: 'root'
 })
 export class S3Service {
+  testCovers = COVERS;
 
   constructor() { }
 
@@ -17,5 +19,9 @@ export class S3Service {
 
   getCover(id: number) {
     // TODO
+  }
+
+  getCoverTest(id: number) {
+    return this.testCovers.find(e => e.id === id);
   }
 }
