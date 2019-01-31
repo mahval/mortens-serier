@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class StripesComponent implements OnInit {
   selectedId;
+  now = new Date();
 
   constructor(
     private activatedRoute: ActivatedRoute,
