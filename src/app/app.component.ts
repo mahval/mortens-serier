@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TYPES_OF_CONTENT } from './variables';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,16 @@ export class AppComponent {
   types_of_content = TYPES_OF_CONTENT;
   selectedContent = this.types_of_content[0];
 
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
   selectContent(content) {
-    this.selectedContent = content;
+    this.router.navigateByUrl('/' + content.link);
   }
 
   contentIsSelected(content) {
-    return (content === this.selectedContent);
+    return (('/' + content.link) === this.router.url);
   }
 }

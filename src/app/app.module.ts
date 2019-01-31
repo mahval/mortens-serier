@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 
 import { MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { StripesComponent } from './stripes/stripes.component';
+import { StoriesComponent } from './stories/stories.component';
+import { CoversComponent } from './covers/covers.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 const appRoutes: Routes = [
 
@@ -17,7 +21,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    StripesComponent,
+    StoriesComponent,
+    CoversComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -28,7 +35,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

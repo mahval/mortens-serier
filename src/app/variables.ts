@@ -1,5 +1,5 @@
 export const TYPES_OF_CONTENT = [
-    { 'name': 'Striper' },
-    { 'name': 'Historier' },
-    { 'name': 'Helsider' }
+    { 'name': 'Striper', 'link': 'stripes' },
+    { 'name': 'Historier', 'link': 'stories' },
+    { 'name': 'Helsider', 'link': 'covers' }
 ];
