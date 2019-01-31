@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 
-import { MatCardModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { StripesComponent } from './stripes/stripes.component';
 import { StoriesComponent } from './stories/stories.component';
 import { CoversComponent } from './covers/covers.component';
@@ -36,6 +36,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
     AppRoutingModule
   ],
   providers: [],

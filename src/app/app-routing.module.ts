@@ -8,8 +8,11 @@ import { CoversComponent } from './covers/covers.component';
 const routes: Routes = [
   { path: '', component: StripesComponent },
   { path: 'stripes', component: StripesComponent },
+  { path: 'stripes/:id', component: StripesComponent },
   { path: 'stories', component: StoriesComponent },
-  { path: 'covers', component: CoversComponent }
+  { path: 'stories/:id', component: StoriesComponent },
+  { path: 'covers', component: CoversComponent },
+  { path: 'covers/:id', component: CoversComponent },
 ];
 
 @NgModule({

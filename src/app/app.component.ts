@@ -22,6 +22,6 @@ export class AppComponent {
   }
 
   contentIsSelected(content) {
-    return (('/' + content.link) === this.router.url);
+    return (this.router.url.startsWith('/' + content.link));
   }
 }

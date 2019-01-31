@@ -4,15 +4,20 @@
     <mat-icon>arrow_back</mat-icon>
   </button>
   <span class="spacer"></span>
+  <button mat-icon-button (click)="toggleZoom()">
+    <mat-icon *ngIf="!zoomedIn">zoom_in</mat-icon>
+    <mat-icon *ngIf="zoomedIn">zoom_out</mat-icon>
+  </button>
+  <span class="spacer"></span>
   <button mat-icon-button>
     <mat-icon>arrow_forward</mat-icon>
   </button>
   <!-- </div> -->
 </section>
 <section class="comic-container">
-  <mat-card>
+  <mat-card style="flex-basis: none" [ngStyle]="{'flex-basis': zoomedIn ? 'initial' : '850px'}">
     <mat-card-header>
-      <mat-card-title>Comic name</mat-card-title>
+      <mat-card-title>#{{selectedId}} &mdash; Cover name</mat-card-title>
       <mat-card-subtitle>{{ now | date:'longDate' }}</mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="../../assets/testcomic.gif" alt="My comic"> -->
