@@ -9,6 +9,7 @@ import { S3Service } from '../s3.service';
 })
 export class StoriesComponent implements OnInit {
   selectedId;
+  now = new Date();
 
   constructor(
     private activatedRoute: ActivatedRoute,
