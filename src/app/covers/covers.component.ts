@@ -9,10 +9,9 @@ import { S3Service } from '../s3.service';
 })
 export class CoversComponent implements OnInit {
   selectedCover;
-  selectedId: number;
-  name;
-  coverUrl;
   zoomedIn = false;
+
+  dataReady = false;
 
   constructor(
     private router: Router,
@@ -20,7 +19,6 @@ export class CoversComponent implements OnInit {
     private s3Service: S3Service
   ) {
     this.activatedRoute.params.subscribe(params => {
-      this.selectedId = params['id'];
       this.selectedCover = this.getCover(+params['id']); // reset and set based on new parameter this time
     });
   }
@@ -31,21 +29,17 @@ export class CoversComponent implements OnInit {
     } else {
       this.initializeId();
     }
+    if (this.selectedCover) { this.dataReady = true; }
   }
 
   getCover(id: number) {
-    // const id = +this.route.snapshot.paramMap.get('id');
-    // this.selectedId = +this.activatedRoute.snapshot.paramMap.get('id');
-    // this.coverUrl = '../../assets/covers/cover_0' + this.selectedId + '.jpg';
-    // const id = this.route.url[0];
     // TODO
     // const id = +this.route.snapshot.paramMap.get('id');
     return this.s3Service.getCoverTest(id);
   }
 
   initializeId() {
-    this.selectedId = 1;
-    this.router.navigate(['/covers/' + this.selectedId]);
+    this.router.navigate(['/covers/1']);
   }
 
   nextStripe() {
